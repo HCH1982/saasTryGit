@@ -3,7 +3,7 @@
 
 %table#movies
   %thead
-    %tr
+    %tr{:class => @sortCol}
       %th= link_to "Movie Title", movies_path(:sort => "title") ,:id =>"title_header" 
       %th Rating
       %th= link_to "Release Date", movies_path(:sort =>"date") ,:id =>"release_date_header"
