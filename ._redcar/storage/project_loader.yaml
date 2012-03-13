@@ -1,3 +1,6 @@
 --- 
-open_files: []
-
+open_files: 
+  - app/views/movies/index.html.haml
+  - app/views/movies/edit.html.haml
+  - app/views/movies/new.html.haml
+  - app/views/movies/show.html.haml
