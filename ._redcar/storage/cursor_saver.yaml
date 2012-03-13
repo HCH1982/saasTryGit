@@ -13,6 +13,8 @@ cursor_positions:
     :cursor_offset: 0
     :timestamp: 2012-03-13 12:03:42.557000 +08:00
   - :path: app/views/movies/index.html.haml
-    :cursor_offset: 206
-    :timestamp: 2012-03-13 17:33:06.009000 +08:00
+    :cursor_offset: 110
+    :timestamp: 2012-03-13 20:48:06.632000 +08:00
+    :selection_offset: 107
+    :block_selection_mode: false
 files_to_retain: 0
