@@ -10,7 +10,7 @@ class MoviesController < ApplicationController
     if params[:sort] == "title"
       @movies = Movie.order(:title).all
     elsif params[:sort] == "date"
-       @movies = Movie.order(:date).all
+       @movies = Movie.order(:release_date).all
     else 
       @movies = Movie.all
     end  
