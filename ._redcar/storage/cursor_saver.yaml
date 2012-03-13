@@ -3,9 +3,6 @@ cursor_positions:
   - :path: README
     :cursor_offset: 0
     :timestamp: 2012-03-13 12:33:54.014000 +08:00
-  - :path: app/views/movies/index.html.haml
-    :cursor_offset: 269
-    :timestamp: 2012-03-13 17:27:41.471000 +08:00
   - :path: app/views/movies/edit.html.haml
     :cursor_offset: 0
     :timestamp: 2012-03-13 12:03:42.487000 +08:00
@@ -15,4 +12,7 @@ cursor_positions:
   - :path: app/views/movies/show.html.haml
     :cursor_offset: 0
     :timestamp: 2012-03-13 12:03:42.557000 +08:00
+  - :path: app/views/movies/index.html.haml
+    :cursor_offset: 206
+    :timestamp: 2012-03-13 17:33:06.009000 +08:00
 files_to_retain: 0
