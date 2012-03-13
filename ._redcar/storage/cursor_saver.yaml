@@ -3,4 +3,7 @@ cursor_positions:
   - :path: README
     :cursor_offset: 0
     :timestamp: 2012-03-13 12:33:54.014000 +08:00
+  - :path: app/views/movies/new.html.haml
+    :cursor_offset: 326
+    :timestamp: 2012-03-13 12:03:42.488000 +08:00
 files_to_retain: 0
