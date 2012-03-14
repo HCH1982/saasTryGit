@@ -6,13 +6,16 @@ cursor_positions:
   - :path: app/views/movies/index.html.haml
     :cursor_offset: 0
     :timestamp: 2012-03-14 00:22:04.577000 +08:00
-  - :path: app/views/movies/edit.html.haml
+  - :path: app/controllers/application_controller.rb
     :cursor_offset: 0
-    :timestamp: 2012-03-14 00:22:04.576000 +08:00
+    :timestamp: 2012-03-14 12:37:29.840000 +08:00
+  - :path: app/views/movies/show.html.haml
+    :cursor_offset: 185
+    :timestamp: 2012-03-14 12:37:29.847000 +08:00
   - :path: app/views/movies/new.html.haml
     :cursor_offset: 0
-    :timestamp: 2012-03-14 00:22:04.577000 +08:00
-  - :path: app/views/movies/show.html.haml
+    :timestamp: 2012-03-14 12:37:29.847000 +08:00
+  - :path: app/views/movies/edit.html.haml
     :cursor_offset: 0
-    :timestamp: 2012-03-14 00:22:04.578000 +08:00
+    :timestamp: 2012-03-14 12:37:29.846000 +08:00
 files_to_retain: 0
