@@ -18,4 +18,7 @@ cursor_positions:
   - :path: app/views/movies/edit.html.haml
     :cursor_offset: 0
     :timestamp: 2012-03-14 12:37:29.846000 +08:00
+  - :path: app/models/movie.rb
+    :cursor_offset: 0
+    :timestamp: 2012-03-14 12:37:29.844000 +08:00
 files_to_retain: 0

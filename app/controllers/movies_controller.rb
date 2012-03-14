@@ -9,7 +9,7 @@ class MoviesController < ApplicationController
   end
 
   def index
-       @all_ratings =  Movie.columns(:rating).all
+       @all_ratings = Movie.find_all_rating
     if params[:sort] == "title"
        @movies = Movie.order(:title).all
        @sorColTitle = "hilite" 
