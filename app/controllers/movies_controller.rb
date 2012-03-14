@@ -12,7 +12,7 @@ class MoviesController < ApplicationController
        @all_ratings = Movie.select(:rating).map(&:rating).uniq
    
     if params[:sort] == "title"
-       @movies = Movie.find(:all, :conditions => { :rating => parpms[:ratings] }).order(:title).all
+       @movies = Movie.find(:all, :conditions => { :rating => params[:ratings] }).order(:title).all
       # @movies = Movie.order(:title).all
        @sorColTitle = "hilite" 
     elsif params[:sort] == "date"
