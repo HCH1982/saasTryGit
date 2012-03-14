@@ -11,9 +11,9 @@
 %table#movies
   %thead
     %tr
-      %th{:class => @sorColTitle}= link_to "Movie Title", movies_path(:sort => "title") ,:id =>"title_header" 
+      %th{:class => @sorColTitle}= link_to "Movie Title", movies_path(:sort =>"title", :rating => @ratings) ,:id =>"title_header" 
       %th Rating
-      %th{:class => @sorColDate}= link_to "Release Date", movies_path(:sort =>"date") ,:id =>"release_date_header"
+      %th{:class => @sorColDate}= link_to "Release Date", movies_path(:sort =>"date", :rating => @ratings) ,:id =>"release_date_header"
       %th More Info
   %tbody
     - @movies.each do |movie|
