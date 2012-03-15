@@ -18,7 +18,7 @@ class MoviesController < ApplicationController
        @movies = Movie.order(:release_date).all
        @sorColDate = "hilite" 
     else 
-      activated_ratings = params[:ratings].collect {|rating| rating.to_s} if params[:ratings]
+        activated_ratings = params[:ratings]
         if activated_ratings
             @movies = Movie.find(:all, :conditions => {:rating => activated_ratings})
         else
