@@ -12,9 +12,9 @@ class MoviesController < ApplicationController
   def index
        @all_ratings = Movie.select(:rating).map(&:rating).uniq
        if params[:ratings]    
-           @ratings = params[:ratings]
+           @ratings = params[:ratings].keys
         else 
-          @ratings = []
+           @ratings = []
         end    
     if params[:sort] 
        @movies = Movie.order(params[:sort]).all
@@ -22,7 +22,7 @@ class MoviesController < ApplicationController
     else 
         if  params[:ratings]
            @movies = Movie.find(:all, :conditions => {:rating =>  params[:ratings].keys})
-           @ratings =  params[:ratings].keys
+  #         @ratings =  params[:ratings].keys
         else
            @movies = Movie.all
         end
