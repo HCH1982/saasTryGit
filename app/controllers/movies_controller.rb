@@ -10,13 +10,14 @@ class MoviesController < ApplicationController
   end
 
   def index
+    
     if params[:ratings] == nil && params[:sort] == nil &&  (session[:ratings] != nil || session[:sort] != nil)
        redirect_to movies_path(:sort => session[:sort], :ratings => session[:ratings])  
     end
        
     @all_ratings = Movie.select(:rating).map(&:rating).uniq
        if params[:ratings]  
-           session[:rating] = params[:ratings]
+           session[:ratings] = params[:ratings]
            @ratings = params[:ratings]
        else 
            @ratings =  []
@@ -24,7 +25,7 @@ class MoviesController < ApplicationController
     if params[:sort] 
        if params[:ratings]
          @movies = Movie.order(params[:sort]).find_all_by_rating(params[:ratings].keys)
-       else
+      else
          @movies = Movie.order(params[:sort])
        end  
        session[:sort] = params[:sort]
@@ -32,7 +33,7 @@ class MoviesController < ApplicationController
     else 
        if params[:ratings]
         @movies = Movie.find_all_by_rating(params[:ratings].keys)
-       else
+      else
         @movies = Movie.all
        end  
     end  
