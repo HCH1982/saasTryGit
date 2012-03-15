@@ -16,8 +16,7 @@ class MoviesController < ApplicationController
     end
        
     @all_ratings = Movie.select(:rating).map(&:rating).uniq
-       if params[:ratings]  
-           session[:ratings] = params[:ratings]
+    if params[:ratings]  
            @ratings = params[:ratings]
        else 
            @ratings =  []
@@ -25,6 +24,7 @@ class MoviesController < ApplicationController
     if params[:sort] 
        if params[:ratings]
          @movies = Movie.order(params[:sort]).find_all_by_rating(params[:ratings].keys)
+          session[:ratings] = params[:ratings]
       else
          @movies = Movie.order(params[:sort])
        end  
@@ -33,6 +33,7 @@ class MoviesController < ApplicationController
     else 
        if params[:ratings]
         @movies = Movie.find_all_by_rating(params[:ratings].keys)
+         session[:ratings] = params[:ratings]
       else
         @movies = Movie.all
        end  
