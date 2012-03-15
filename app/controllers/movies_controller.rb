@@ -2,7 +2,7 @@ class MoviesController < ApplicationController
   attr_accessor :sorColTitle
   attr_accessor :sorColDate
   attr_accessor :all_ratings 
-   attr_accessor :ratings 
+  attr_accessor :ratings 
   def show
     id = params[:id] # retrieve movie ID from URI route
     @movie = Movie.find(id) # look up movie by unique ID
@@ -11,7 +11,8 @@ class MoviesController < ApplicationController
 
   def index
        @all_ratings = Movie.select(:rating).map(&:rating).uniq
-    if params[:sort] 
+       @ratings = []
+      if params[:sort] 
        @movies = Movie.order(params[:sort]).all
        params[:sort] == "title" ? @sorColTitle = "hilite":  @sorColDate = "hilite" 
     else 
