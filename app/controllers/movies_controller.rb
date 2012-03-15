@@ -10,7 +10,7 @@ class MoviesController < ApplicationController
   end
 
   def index
-    if params[:ratings] != session[:ratings] || params[:sort] != session[:sort]
+    if !params[:ratings] && !params[:sort] && params[:ratings] != session[:ratings] && params[:sort] != session[:sort]
        redirect_to movies_path(:sort => session[:sort], :ratings => session[:ratings])  
     end
        
