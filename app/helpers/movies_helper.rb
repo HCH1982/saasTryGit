@@ -5,7 +5,7 @@ module MoviesHelper
   end
   
   def checked?(rating) 
-    @ratings.include?rating 
+    @ratings.keys.include?rating 
   end
 end
 
