@@ -13,9 +13,7 @@ class MoviesController < ApplicationController
        @all_ratings = Movie.select(:rating).map(&:rating).uniq
        if params[:ratings]  
            @ratings = params[:ratings].keys
-       else    
-           @ratings = []
-       end    
+       end   
     if params[:sort] 
        @movies = Movie.find_all_by_rating(params[:ratings].keys).order(params[:sort])
        params[:sort] == "title" ? @sorColTitle = "hilite":  @sorColDate = "hilite" 
