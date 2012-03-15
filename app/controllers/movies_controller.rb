@@ -16,6 +16,7 @@ class MoviesController < ApplicationController
     else 
         if  params[:ratings]
            @movies = Movie.find(:all, :conditions => {:rating =>  params[:ratings].keys})
+           @ratings =  params[:ratings].keys
         else
            @movies = Movie.all
         end
