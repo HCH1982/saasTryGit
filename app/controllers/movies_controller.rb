@@ -10,8 +10,13 @@ class MoviesController < ApplicationController
   end
 
   def index
-       @all_ratings = Movie.select(:rating).map(&:rating).uniq
+    if params[:ratings] != session[:ratings] || params[:sort] != session[:sort]
+       redirect_to movies_path(:sort => session[:sort], :ratings => session[:ratings])  
+    end
+       
+    @all_ratings = Movie.select(:rating).map(&:rating).uniq
        if params[:ratings]  
+           session[:rating] = params[:ratings]
            @ratings = params[:ratings]
        else 
            @ratings =  []
@@ -22,6 +27,7 @@ class MoviesController < ApplicationController
        else
          @movies = Movie.order(params[:sort])
        end  
+       session[:sort] = params[:sort]
        params[:sort] == "title" ? @sorColTitle = "hilite":  @sorColDate = "hilite" 
     else 
        if params[:ratings]
