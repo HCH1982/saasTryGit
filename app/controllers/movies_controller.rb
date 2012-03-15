@@ -19,7 +19,7 @@ class MoviesController < ApplicationController
        @sorColDate = "hilite" 
     else 
         if  params[:ratings]
-          @movies = Movie.find(:all, :conditions => {:rating =>  params[:ratings][:rating]})
+          @movies = Movie.find(:all, :conditions => {:rating =>  params[:ratings].keys})
         else
             @movies = Movie.all
         end
