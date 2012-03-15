@@ -2,6 +2,7 @@ class MoviesController < ApplicationController
   attr_accessor :sorColTitle
   attr_accessor :sorColDate
   attr_accessor :all_ratings 
+   attr_accessor :ratings 
   def show
     id = params[:id] # retrieve movie ID from URI route
     @movie = Movie.find(id) # look up movie by unique ID
