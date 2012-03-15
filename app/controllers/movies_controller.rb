@@ -9,13 +9,13 @@ class MoviesController < ApplicationController
     # will render app/views/movies/show.<extension> by default
   end
 
-  def index
-    
+  def index 
     if params[:ratings] == nil && params[:sort] == nil &&  (session[:ratings] != nil || session[:sort] != nil)
        redirect_to movies_path(:sort => session[:sort], :ratings => session[:ratings])  
-    end
-       
+    end  
     @all_ratings = Movie.select(:rating).map(&:rating).uniq
+    session[:ratings] = params[:ratings]
+    session[:sort] = params[:sort]      
     if params[:ratings]  
            @ratings = params[:ratings]
        else 
@@ -23,17 +23,14 @@ class MoviesController < ApplicationController
        end   
     if params[:sort] 
        if params[:ratings]
-         @movies = Movie.order(params[:sort]).find_all_by_rating(params[:ratings].keys)
-          session[:ratings] = params[:ratings]
+         @movies = Movie.order(params[:sort]).find_all_by_rating(params[:ratings].keys)   
       else
          @movies = Movie.order(params[:sort])
        end  
-       session[:sort] = params[:sort]
        params[:sort] == "title" ? @sorColTitle = "hilite":  @sorColDate = "hilite" 
     else 
        if params[:ratings]
         @movies = Movie.find_all_by_rating(params[:ratings].keys)
-         session[:ratings] = params[:ratings]
       else
         @movies = Movie.all
        end  
